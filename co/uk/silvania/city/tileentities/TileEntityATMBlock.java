@@ -1,6 +1,6 @@
 package co.uk.silvania.city.tileentities;
 
-import co.uk.silvania.city.RoadsCity;
+import co.uk.silvania.city.FlenixCities;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -17,7 +17,7 @@ public class TileEntityATMBlock extends BlockContainer {
 
 	public TileEntityATMBlock(int id) {
 		super(id, Material.iron);
-		this.setCreativeTab(RoadsCity.tabEcon);
+		this.setCreativeTab(FlenixCities.tabEcon);
 		this.setHardness(1.0F);
 		this.setLightValue(0.5F);
 	}
@@ -38,8 +38,8 @@ public class TileEntityATMBlock extends BlockContainer {
                     EntityPlayer player, int i, float j, float k, float l) {
             TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
             if (player.getHeldItem() != null) {
-            	if (player.getHeldItem().getItem() == RoadsCity.debitCard) {
-                    player.openGui(RoadsCity.instance, 0, world, x, y, z);
+            	if (player.getHeldItem().getItem() == FlenixCities.debitCard) {
+                    player.openGui(FlenixCities.instance, 0, world, x, y, z);
             	}
             }
 			return true;

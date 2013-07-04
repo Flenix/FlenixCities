@@ -1,6 +1,6 @@
 package co.uk.silvania.city.items;
 
-import co.uk.silvania.city.RoadsCity;
+import co.uk.silvania.city.FlenixCities;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -10,7 +10,7 @@ public class ItemNote10 extends Item {
 
 	public ItemNote10(int id) {
 		super(id);
-		this.setCreativeTab(RoadsCity.tabEcon);
+		this.setCreativeTab(FlenixCities.tabEcon);
 		this.setMaxStackSize(50);
 	}
 	

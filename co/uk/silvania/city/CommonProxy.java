@@ -9,47 +9,47 @@ public class CommonProxy {
     }
     
     public void registerBlocks() {
-        GameRegistry.registerBlock(RoadsCity.escalator, "escalator");
-        GameRegistry.registerBlock(RoadsCity.atmBlock, "atmBlock");
-        GameRegistry.registerBlock(RoadsCity.travellator, "travellator");
+        GameRegistry.registerBlock(FlenixCities.escalator, "escalator");
+        GameRegistry.registerBlock(FlenixCities.atmBlock, "atmBlock");
+        GameRegistry.registerBlock(FlenixCities.travellator, "travellator");
         
-        GameRegistry.registerItem(RoadsCity.coin1,"coin1");
-        GameRegistry.registerItem(RoadsCity.coin2,"coin2");
-        GameRegistry.registerItem(RoadsCity.coin5,"coin5");
-        GameRegistry.registerItem(RoadsCity.coin10,"coin10");
-        GameRegistry.registerItem(RoadsCity.coin25,"coin25");
-        GameRegistry.registerItem(RoadsCity.coin50,"coin50");
-        GameRegistry.registerItem(RoadsCity.coin100,"coin100");
-        GameRegistry.registerItem(RoadsCity.note100,"note100");
-        GameRegistry.registerItem(RoadsCity.note500,"note500");
-        GameRegistry.registerItem(RoadsCity.note1000,"note1000");
-        GameRegistry.registerItem(RoadsCity.note2000,"note2000");
-        GameRegistry.registerItem(RoadsCity.note5000,"note5000");
-        GameRegistry.registerItem(RoadsCity.note10000,"note10000");
-        GameRegistry.registerItem(RoadsCity.prePaidCard,"prePaidCard");
-        GameRegistry.registerItem(RoadsCity.debitCard,"debitCard");
+        GameRegistry.registerItem(FlenixCities.coin1,"coin1");
+        GameRegistry.registerItem(FlenixCities.coin2,"coin2");
+        GameRegistry.registerItem(FlenixCities.coin5,"coin5");
+        GameRegistry.registerItem(FlenixCities.coin10,"coin10");
+        GameRegistry.registerItem(FlenixCities.coin25,"coin25");
+        GameRegistry.registerItem(FlenixCities.coin50,"coin50");
+        GameRegistry.registerItem(FlenixCities.coin100,"coin100");
+        GameRegistry.registerItem(FlenixCities.note100,"note100");
+        GameRegistry.registerItem(FlenixCities.note500,"note500");
+        GameRegistry.registerItem(FlenixCities.note1000,"note1000");
+        GameRegistry.registerItem(FlenixCities.note2000,"note2000");
+        GameRegistry.registerItem(FlenixCities.note5000,"note5000");
+        GameRegistry.registerItem(FlenixCities.note10000,"note10000");
+        GameRegistry.registerItem(FlenixCities.prePaidCard,"prePaidCard");
+        GameRegistry.registerItem(FlenixCities.debitCard,"debitCard");
     }
     
     public void addNames() {
-        LanguageRegistry.addName(RoadsCity.escalator, "Escalator");
-        LanguageRegistry.addName(RoadsCity.travellator, "Travellator");
-        LanguageRegistry.addName(RoadsCity.atmBlock, "ATM");
+        LanguageRegistry.addName(FlenixCities.escalator, "Escalator");
+        LanguageRegistry.addName(FlenixCities.travellator, "Travellator");
+        LanguageRegistry.addName(FlenixCities.atmBlock, "ATM");
         
-        LanguageRegistry.addName(RoadsCity.coin1, "1 " + CityConfig.currencySmall);
-        LanguageRegistry.addName(RoadsCity.coin2, "2 " + CityConfig.currencySmallPlural);
-        LanguageRegistry.addName(RoadsCity.coin5, "5 " + CityConfig.currencySmallPlural);
-        LanguageRegistry.addName(RoadsCity.coin10, "10 " + CityConfig.currencySmallPlural);
-        LanguageRegistry.addName(RoadsCity.coin25, "25 " + CityConfig.currencySmallPlural);
-        LanguageRegistry.addName(RoadsCity.coin50, "50 " + CityConfig.currencySmallPlural);
-        LanguageRegistry.addName(RoadsCity.coin100, "1 " + CityConfig.currencyLarge + " Coin");
-        LanguageRegistry.addName(RoadsCity.note100, "1 " + CityConfig.currencyLarge);
-        LanguageRegistry.addName(RoadsCity.note500, "5 " + CityConfig.currencyLargePlural);
-        LanguageRegistry.addName(RoadsCity.note1000, "10 " + CityConfig.currencyLargePlural);
-        LanguageRegistry.addName(RoadsCity.note2000, "20 " + CityConfig.currencyLargePlural);
-        LanguageRegistry.addName(RoadsCity.note5000, "50 " + CityConfig.currencyLargePlural);
-        LanguageRegistry.addName(RoadsCity.note10000, "100 " + CityConfig.currencyLargePlural);
-        LanguageRegistry.addName(RoadsCity.prePaidCard, "Pre-Paid Card");
-        LanguageRegistry.addName(RoadsCity.debitCard, "Debit Card");
+        LanguageRegistry.addName(FlenixCities.coin1, "1 " + CityConfig.currencySmall);
+        LanguageRegistry.addName(FlenixCities.coin2, "2 " + CityConfig.currencySmallPlural);
+        LanguageRegistry.addName(FlenixCities.coin5, "5 " + CityConfig.currencySmallPlural);
+        LanguageRegistry.addName(FlenixCities.coin10, "10 " + CityConfig.currencySmallPlural);
+        LanguageRegistry.addName(FlenixCities.coin25, "25 " + CityConfig.currencySmallPlural);
+        LanguageRegistry.addName(FlenixCities.coin50, "50 " + CityConfig.currencySmallPlural);
+        LanguageRegistry.addName(FlenixCities.coin100, "1 " + CityConfig.currencyLarge + " Coin");
+        LanguageRegistry.addName(FlenixCities.note100, "1 " + CityConfig.currencyLarge);
+        LanguageRegistry.addName(FlenixCities.note500, "5 " + CityConfig.currencyLargePlural);
+        LanguageRegistry.addName(FlenixCities.note1000, "10 " + CityConfig.currencyLargePlural);
+        LanguageRegistry.addName(FlenixCities.note2000, "20 " + CityConfig.currencyLargePlural);
+        LanguageRegistry.addName(FlenixCities.note5000, "50 " + CityConfig.currencyLargePlural);
+        LanguageRegistry.addName(FlenixCities.note10000, "100 " + CityConfig.currencyLargePlural);
+        LanguageRegistry.addName(FlenixCities.prePaidCard, "Pre-Paid Card");
+        LanguageRegistry.addName(FlenixCities.debitCard, "Debit Card");
         
     	
     }

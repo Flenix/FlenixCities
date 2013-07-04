@@ -1,6 +1,6 @@
 package co.uk.silvania.city.items;
 
-import co.uk.silvania.city.RoadsCity;
+import co.uk.silvania.city.FlenixCities;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -12,12 +12,12 @@ public class ItemCoin10 extends Item {
 	public ItemCoin10(int id) {
 		super(id);
 		this.setMaxStackSize(50);
-		this.setCreativeTab(RoadsCity.tabEcon);
+		this.setCreativeTab(FlenixCities.tabEcon);
 	}
 	
 
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon("City:Coin10");
+        itemIcon = iconRegister.registerIcon("City:" + this.getUnlocalizedName());
 	}
 }

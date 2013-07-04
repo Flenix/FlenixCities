@@ -1,6 +1,6 @@
 package co.uk.silvania.city.tileentities;
 
-import co.uk.silvania.city.RoadsCity;
+import co.uk.silvania.city.FlenixCities;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -16,7 +16,7 @@ public class TileEntityTravellatorBlock extends BlockContainer {
 
 	public TileEntityTravellatorBlock(int id) {
 		super(id, Material.ice);
-		this.setCreativeTab(RoadsCity.tabCity);
+		this.setCreativeTab(FlenixCities.tabCity);
         this.setBlockBounds(0.0F, -0.5F, 0.0F, 1.0F, 0.1F, 1.0F);
 		this.setHardness(1.0F);
 	}

@@ -3,7 +3,7 @@ package co.uk.silvania.city.tileentities;
 import java.util.Iterator;
 import java.util.List;
 
-import co.uk.silvania.city.RoadsCity;
+import co.uk.silvania.city.FlenixCities;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ContainerChest;
@@ -175,13 +175,13 @@ public class TileEntityATMEntity extends TileEntityChest implements IInventory
     public void openChest()
     {
         ++this.numUsingPlayers;
-        this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, RoadsCity.atmBlock.blockID, 1, this.numUsingPlayers);
+        this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, FlenixCities.atmBlock.blockID, 1, this.numUsingPlayers);
     }
 
     public void closeChest()
     {
         --this.numUsingPlayers;
-        this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, RoadsCity.atmBlock.blockID, 1, this.numUsingPlayers);
+        this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, FlenixCities.atmBlock.blockID, 1, this.numUsingPlayers);
     }
 
     /**

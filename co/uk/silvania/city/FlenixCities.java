@@ -1,5 +1,6 @@
 package co.uk.silvania.city;
 
+import co.uk.silvania.city.econ.BalCommand;
 import co.uk.silvania.city.items.*;
 import co.uk.silvania.city.tileentities.*;
 import net.minecraft.block.Block;
@@ -16,6 +17,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -23,12 +25,12 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-@Mod(modid="RoadsCity", name="RoadsCity", version="0.1.0")
+@Mod(modid="FlenixCities", name="FlenixCities", version="0.1.0")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
-public class RoadsCity { 
+public class FlenixCities { 
 	
-    @Instance("RoadsCity")
-    public static RoadsCity instance;
+    @Instance("FlenixCities")
+    public static FlenixCities instance;
     public static GuiHandler roadsGuiHandler = new GuiHandler();
 
     @SidedProxy(clientSide="co.uk.silvania.city.client.ClientProxy", serverSide="co.uk.silvania.city.CommonProxy")
@@ -42,7 +44,7 @@ public class RoadsCity {
 	
 	public static CreativeTabs tabEcon = new CreativeTabs("tabEcon") {
 		public ItemStack getIconItemStack() {
-			return new ItemStack(RoadsCity.coin100, 1, 0);
+			return new ItemStack(FlenixCities.coin100, 1, 0);
 		}
 	};
 			
@@ -99,20 +101,26 @@ public class RoadsCity {
     	note10000 = new ItemNote100(config.note10000ID).setUnlocalizedName("note10000");
     	prePaidCard = new PrePaidCard(config.prePaidCardID).setUnlocalizedName("prePaidCard");
     	debitCard = new DebitCard(config.debitCardID).setUnlocalizedName("debitCard");
-        }
+        proxy.registerRenderThings();
+        
+        proxy.registerBlocks();
+        proxy.addNames();    
+    
+    }
                
     @Init
     public void load(FMLInitializationEvent event) {
-            proxy.registerRenderThings();
-            
-            proxy.registerBlocks();
-            proxy.addNames();
+    	
+    	/*@ServerStarting
+    	public void serverLoad(FMLServerStartingEvent event) {
+    		event.registerServerCommand(new BalCommand());
+    	}*/
             
             GameRegistry.registerTileEntity(TileEntityEscalatorEntity.class, "tileEntityEscalator");
             GameRegistry.registerTileEntity(TileEntityATMEntity.class, "tileEntityATM");
             GameRegistry.registerTileEntity(TileEntityTravellatorEntity.class, "tileEntityTravellator");
             
-            //LiquidContainerRegistry.registerLiquid(new LiquidContainerData(new LiquidStack(RoadsCity.roadsTarStill, LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(RoadsCity.tarBucketItem), new ItemStack(Item.bucketEmpty)));
+            //LiquidContainerRegistry.registerLiquid(new LiquidContainerData(new LiquidStack(FlenixCities.roadsTarStill, LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(FlenixCities.tarBucketItem), new ItemStack(Item.bucketEmpty)));
             LanguageRegistry.instance().addStringLocalization("itemGroup.tabCity", "en_US", "Cities: Blocks");
             LanguageRegistry.instance().addStringLocalization("itemGroup.tabEcon", "en_US", "Cities: Economy");
         }
