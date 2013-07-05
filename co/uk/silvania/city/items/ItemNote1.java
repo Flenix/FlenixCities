@@ -16,6 +16,6 @@ public class ItemNote1 extends Item {
 	
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon("City:Note100");
+        itemIcon = iconRegister.registerIcon("flenixcities:Note100");
 	}
 }

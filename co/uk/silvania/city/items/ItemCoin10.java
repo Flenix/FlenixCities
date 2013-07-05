@@ -18,6 +18,6 @@ public class ItemCoin10 extends Item {
 
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon("City:" + this.getUnlocalizedName());
+        itemIcon = iconRegister.registerIcon("flenixcities:Coin10");
 	}
 }

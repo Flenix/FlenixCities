@@ -2,11 +2,13 @@ package co.uk.silvania.city.tileentities;
 
 import org.lwjgl.opengl.GL11;
 
+import co.uk.silvania.city.FlenixCities;
 import co.uk.silvania.city.client.models.ATMModel;
 import co.uk.silvania.city.client.models.EscalatorModel;
 
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
@@ -20,7 +22,7 @@ import net.minecraft.world.World;
 
 public class TileEntityATMRenderer extends TileEntitySpecialRenderer {
 	
-    private static final ResourceLocation texture = new ResourceLocation("/assets/City/textures/blocks/ATM.png");
+    //private static final ResourceLocation texture = new ResourceLocation("flenixcities:assets/flenixcities/textures/entities/atm.png");
 	
 	private final ATMModel model;
 		
@@ -49,8 +51,8 @@ public class TileEntityATMRenderer extends TileEntitySpecialRenderer {
 			meta = 270;
 		}
 		
-        this.func_110628_a(texture);
 		GL11.glPushMatrix();
+		Minecraft.getMinecraft().renderEngine.func_110577_a(new ResourceLocation("/assets/flenixcities/textures/entities/atm.png"));
 		GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
 		GL11.glRotatef(meta, 0.0F, 1.0F, 0.0F);
 		//GL11.glRotatef(((TileEntityBarrierEntity)tile).getRotationPivot()), 0.0F, 1.0F, 0.0F);

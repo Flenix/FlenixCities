@@ -10,7 +10,7 @@ import org.lwjgl.opengl.GL11;
 
 public class GuiATM extends GuiContainer {
 	
-    private static final ResourceLocation texture = new ResourceLocation("/assets/City/textures/gui/atm.png");
+    private static final ResourceLocation texture = new ResourceLocation("/assets/flenixcities/textures/gui/atm.png");
 
         public GuiATM (InventoryPlayer inventoryPlayer, TileEntityATMEntity tileEntity, World world, int x, int y, int z) {
                                 super(new ContainerATM(inventoryPlayer, tileEntity));

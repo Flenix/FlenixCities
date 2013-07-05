@@ -69,5 +69,4 @@ public class BalCommand implements ICommand {
 		// TODO Auto-generated method stub
 		
 	}
-
 }

@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
@@ -25,7 +26,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-@Mod(modid="FlenixCities", name="FlenixCities", version="0.1.0")
+@Mod(modid="flenixcities", name="FlenixCities", version="0.1.0")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class FlenixCities { 
 	
@@ -74,10 +75,10 @@ public class FlenixCities {
 
     
     
-    @PreInit
+    @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
     	CityConfig config = new CityConfig();
-    	NetworkRegistry.instance().registerGuiHandler(this, roadsGuiHandler);
+        proxy.registerRenderThings();
     	
     	CityConfig.loadConfig(event); 
 
@@ -100,16 +101,15 @@ public class FlenixCities {
     	note5000 = new ItemNote50(config.note5000ID).setUnlocalizedName("note10000");
     	note10000 = new ItemNote100(config.note10000ID).setUnlocalizedName("note10000");
     	prePaidCard = new PrePaidCard(config.prePaidCardID).setUnlocalizedName("prePaidCard");
-    	debitCard = new DebitCard(config.debitCardID).setUnlocalizedName("debitCard");
-        proxy.registerRenderThings();
-        
-        proxy.registerBlocks();
-        proxy.addNames();    
-    
+    	debitCard = new DebitCard(config.debitCardID).setUnlocalizedName("debitCard");    
     }
                
-    @Init
-    public void load(FMLInitializationEvent event) {
+    @EventHandler
+    public void Init(FMLInitializationEvent event) {        
+        proxy.registerBlocks();
+        proxy.addNames();    
+        
+    	NetworkRegistry.instance().registerGuiHandler(this, roadsGuiHandler);
     	
     	/*@ServerStarting
     	public void serverLoad(FMLServerStartingEvent event) {
@@ -126,8 +126,8 @@ public class FlenixCities {
         }
 
 
-		@PostInit
-        public void postInit(FMLPostInitializationEvent event) {
-                // Stub Method
-        		}
-		};
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+    	// Stub Method
+    }
+};
