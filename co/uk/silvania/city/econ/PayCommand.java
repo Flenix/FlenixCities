@@ -16,11 +16,11 @@ import cpw.mods.fml.common.Mod.ServerStarting;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 
-public class BalCommand extends CommandBase {
+public class PayCommand extends CommandBase {
 	
 	@Override
 	public String getCommandName() {
-		return "bal";
+		return "pay";
 	}
 	
 	@Override
@@ -32,7 +32,7 @@ public class BalCommand extends CommandBase {
 	public String getCommandUsage(ICommandSender icommandsender) {
 		if (icommandsender instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer)icommandsender;
-			player.addChatMessage("Your Balance is: Write the damn code for it dickweed.");
+			player.addChatMessage("You have payed" + "[amount]" + "to" + "[player]");
 		}
 		return null;
 	}
