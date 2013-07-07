@@ -2,7 +2,9 @@ package co.uk.silvania.city.tileentities;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.ResourceLocation;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
@@ -22,18 +24,18 @@ public class GuiATM extends GuiContainer {
         /** The Y size of the inventory window in pixels. */
         protected int ySize = 182;
 
-        @Override
-        protected void drawGuiContainerForegroundLayer(int param1, int param2) {
-                fontRenderer.drawString("ATM", 8, 0, 4210752);
-                fontRenderer.drawString("Balance", 8, 17, 4210752);
-                fontRenderer.drawString("Safe", 132, -3, 4210752);
-                fontRenderer.drawString("Deposit", 124, 5, 4210752);
-                fontRenderer.drawString("Withdraw", 8, 37, 4210752);
-                fontRenderer.drawString("Deposit", 8, 57, 4210752);
-                fontRenderer.drawString("1234.56", 58, 17, 1237000);
-                fontRenderer.drawString("345.67", 58, 37, 1237000);
-                fontRenderer.drawString("789.01", 58, 57, 1237000);
-                fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, ySize - 103, 4210752);
+        protected void drawGuiContainerForegroundLayer(int param1, int param2, EntityPlayer player) {
+        	NBTTagCompound nbt = player.getEntityData();
+        	fontRenderer.drawString("ATM", 8, 0, 4210752);
+        	fontRenderer.drawString("Balance", 8, 17, 4210752);
+        	fontRenderer.drawString("Safe", 132, -3, 4210752);
+        	fontRenderer.drawString("Deposit", 124, 5, 4210752);
+        	fontRenderer.drawString("Withdraw", 8, 37, 4210752);
+        	fontRenderer.drawString("Deposit", 8, 57, 4210752);
+        	fontRenderer.drawString("" + nbt.getInteger("Balance"), 58, 17, 1237000);
+        	fontRenderer.drawString("345.67", 58, 37, 1237000);
+        	fontRenderer.drawString("789.01", 58, 57, 1237000);
+        	fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, ySize - 103, 4210752);
         }
 
         @Override

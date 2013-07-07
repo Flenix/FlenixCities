@@ -7,6 +7,8 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 
 public class ItemNote100 extends Item {
+	
+	public static int moneyValue = 10000;
 
 	public ItemNote100(int id) {
 		super(id);

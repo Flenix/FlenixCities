@@ -89,7 +89,7 @@ public class FlenixCities {
     public void preInit(FMLPreInitializationEvent event) {
     	CityConfig config = new CityConfig();
         proxy.registerRenderThings();
-    	
+    	NetworkRegistry.instance().registerGuiHandler(this, roadsGuiHandler);
     	CityConfig.loadConfig(event); 
 
     	escalator = new TileEntityEscalatorBlock(config.escalatorID).setUnlocalizedName("escalator");
@@ -118,8 +118,6 @@ public class FlenixCities {
     public void Init(FMLInitializationEvent event) {        
         proxy.registerBlocks();
         proxy.addNames();    
-        
-    	NetworkRegistry.instance().registerGuiHandler(this, roadsGuiHandler);
     	
     	/*@ServerStarting
     	public void serverLoad(FMLServerStartingEvent event) {

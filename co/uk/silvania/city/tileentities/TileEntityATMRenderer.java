@@ -22,8 +22,6 @@ import net.minecraft.world.World;
 
 public class TileEntityATMRenderer extends TileEntitySpecialRenderer {
 	
-    //private static final ResourceLocation texture = new ResourceLocation("flenixcities:assets/flenixcities/textures/entities/atm.png");
-	
 	private final ATMModel model;
 		
 	public TileEntityATMRenderer() {
@@ -35,11 +33,11 @@ public class TileEntityATMRenderer extends TileEntitySpecialRenderer {
 		int i = te.getBlockMetadata();
 		int meta = 180;
 
-		if (i == 3) {
+		if (i == 0) {
 			meta = 0;
 		}
 
-		if (i == 5) {
+		if (i == 3) {
 			meta = 90;
 		}
 
@@ -47,12 +45,23 @@ public class TileEntityATMRenderer extends TileEntitySpecialRenderer {
 			meta = 180;
 		}
 
-		if (i == 4) {
+		if (i == 1) {
 			meta = 270;
 		}
 		
 		GL11.glPushMatrix();
-		Minecraft.getMinecraft().renderEngine.func_110577_a(new ResourceLocation("/assets/flenixcities/textures/entities/atm.png"));
+		if (i == 0) {
+			Minecraft.getMinecraft().renderEngine.func_110577_a(new ResourceLocation("flenixcities", "textures/entities/atmstone.png"));
+		}
+		if (i == 1) {
+			Minecraft.getMinecraft().renderEngine.func_110577_a(new ResourceLocation("flenixcities", "textures/entities/atmbrick.png"));
+		}
+		if (i == 2) {
+			Minecraft.getMinecraft().renderEngine.func_110577_a(new ResourceLocation("flenixcities", "textures/entities/atmwhite.png"));
+		}
+		if (i == 3) {
+			Minecraft.getMinecraft().renderEngine.func_110577_a(new ResourceLocation("flenixcities", "textures/entities/atmgrey.png"));
+		}
 		GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
 		GL11.glRotatef(meta, 0.0F, 1.0F, 0.0F);
 		//GL11.glRotatef(((TileEntityBarrierEntity)tile).getRotationPivot()), 0.0F, 1.0F, 0.0F);

@@ -9,6 +9,8 @@ import net.minecraft.util.Icon;
 
 public class ItemCoin1 extends Item {
 
+	public static int moneyValue = 1;
+
 	public ItemCoin1(int id) {
 		super(id);
 		this.setMaxStackSize(50);

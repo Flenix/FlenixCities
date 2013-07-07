@@ -9,6 +9,7 @@ import net.minecraft.command.ICommandManager;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.command.ServerCommandManager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.MinecraftServer;
 
 import co.uk.silvania.city.CityConfig;
@@ -32,7 +33,8 @@ public class BalCommand extends CommandBase {
 	public String getCommandUsage(ICommandSender icommandsender) {
 		if (icommandsender instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer)icommandsender;
-			player.addChatMessage("Your Balance is: Write the damn code for it dickweed.");
+			NBTTagCompound nbt = player.getEntityData();
+			player.addChatMessage("Your Balance is: " + nbt.getInteger("Balance"));
 		}
 		return null;
 	}

@@ -8,6 +8,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 
 public class ItemCoin50 extends Item {
+	
+	public static int moneyValue = 50;
 
 	public ItemCoin50(int id) {
 		super(id);
