@@ -1,8 +1,7 @@
 package co.uk.silvania.city;
 
-import co.uk.silvania.city.tileentities.ContainerATM;
-import co.uk.silvania.city.tileentities.GuiATM;
-import co.uk.silvania.city.tileentities.TileEntityATMEntity;
+import co.uk.silvania.city.tileentities.*;
+import co.uk.silvania.city.tileentities.containers.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -22,6 +21,30 @@ public class GuiHandler implements IGuiHandler {
                         return new ContainerATM(player.inventory, (TileEntityATMEntity) tileEntity);
                 }	
         	}
+        	case 1: {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if(tileEntity instanceof TileEntityFridge) {
+                        return new ContainerFridge(player.inventory, (TileEntityFridge) tileEntity);
+                }	
+        	}
+        	case 2: {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if(tileEntity instanceof TileEntityFridgeLarge) {
+                        return new ContainerFridgeLarge(player.inventory, (TileEntityFridgeLarge) tileEntity);
+                }	
+        	}
+        	case 3: {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if(tileEntity instanceof TileEntityFloatingShelves) {
+                        return new ContainerFloatingShelves(player.inventory, (TileEntityFloatingShelves) tileEntity);
+                }	
+        	}
+        	case 4: {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if(tileEntity instanceof TileEntitySchoolDesk) {
+                        return new ContainerSchoolDesk(player.inventory, (TileEntitySchoolDesk) tileEntity);
+                }	
+        	}
         }
 			return null;	
     }
@@ -33,6 +56,30 @@ public class GuiHandler implements IGuiHandler {
                 TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
                 if(tileEntity instanceof TileEntityATMEntity) {
                         return new GuiATM(player.inventory, (TileEntityATMEntity) tileEntity, world, x, y, z);
+                }	
+        	}        	
+        	case 1: {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if(tileEntity instanceof TileEntityFridge) {
+                        return new GuiFridge(player.inventory, (TileEntityFridge) tileEntity, world, x, y, z);
+                }	
+        	}
+        	case 2: {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if(tileEntity instanceof TileEntityFridgeLarge) {
+                        return new GuiFridgeLarge(player.inventory, (TileEntityFridgeLarge) tileEntity, world, x, y, z);
+                }	
+        	}
+        	case 3: {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if(tileEntity instanceof TileEntityFloatingShelves) {
+                        return new GuiFloatingShelves(player.inventory, (TileEntityFloatingShelves) tileEntity, world, x, y, z);
+                }	
+        	}
+        	case 4: {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if(tileEntity instanceof TileEntitySchoolDesk) {
+                        return new GuiSchoolDesk(player.inventory, (TileEntitySchoolDesk) tileEntity, world, x, y, z);
                 }	
         	}
         }
