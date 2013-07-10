@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
 
 public class ItemNote10 extends Item {
 	
-	public static int moneyValue = 1000;
+	public static double moneyValue = 10.00;
 
 	public ItemNote10(int id) {
 		super(id);

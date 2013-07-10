@@ -18,7 +18,7 @@ import net.minecraft.util.AxisAlignedBB;
 
 public class TileEntityATMEntity extends TileEntityChest implements IInventory
 {
-    private ItemStack[] atmContents = new ItemStack[26];
+    private ItemStack[] atmContents = new ItemStack[31];
 
     public int numUsingPlayers;
 
@@ -27,7 +27,7 @@ public class TileEntityATMEntity extends TileEntityChest implements IInventory
 
     public int getSizeInventory()
     {
-        return 26;
+        return 31;
     }
 
     public ItemStack getStackInSlot(int par1)

@@ -2,6 +2,7 @@ package co.uk.silvania.city;
 
 import net.minecraft.item.ItemStack;
 import co.uk.silvania.city.items.*;
+import co.uk.silvania.city.items.itemblocks.ItemATMBlock;
 import co.uk.silvania.city.items.itemblocks.ItemSkyscraperBlocks;
 import co.uk.silvania.city.items.itemblocks.ItemStainedGlass;
 import co.uk.silvania.city.items.itemblocks.ItemStainedGlassLit;
@@ -10,7 +11,6 @@ import co.uk.silvania.city.items.itemblocks.ItemStyledGlass;
 import co.uk.silvania.city.items.itemblocks.ItemStyledGlassLit;
 import co.uk.silvania.city.items.itemblocks.ItemWoolCeilingTile;
 import co.uk.silvania.city.items.itemblocks.ItemWoolStone;
-import co.uk.silvania.city.tileentities.blocks.ItemATMBlock;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -127,22 +127,10 @@ public class CommonProxy {
         LanguageRegistry.addName(FlenixCities.drinkCoffee, "Coffee");
         LanguageRegistry.addName(FlenixCities.drinkHotChocolate, "Hot Chocolate");
         
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 0), "ATM Stone Brick");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 1), "ATM (Ignore)");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 2), "ATM (Ignore)");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 3), "ATM (Ignore)");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 4), "ATM Stone");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 5), "ATM (Ignore)");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 6), "ATM (Ignore)");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 7), "ATM (Ignore)");
+        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 0), "ATM Stone");
+        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 4), "ATM Stone Brick");
         LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 8), "ATM City White");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 9), "ATM (Ignore)");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 10), "ATM (Ignore)");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 11), "ATM (Ignore)");
         LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 12), "ATM City Grey");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 13), "ATM (Ignore)");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 14), "ATM (Ignore)");
-        LanguageRegistry.addName(new ItemStack(FlenixCities.atmBlock, 1, 15), "ATM (Ignore)");
         
         LanguageRegistry.addName(new ItemStack(FlenixCities.skyscraperBlocks, 1, 0), "White Skyscraper Block");
         LanguageRegistry.addName(new ItemStack(FlenixCities.skyscraperBlocks, 1, 1), "Light Grey Skyscraper Block");

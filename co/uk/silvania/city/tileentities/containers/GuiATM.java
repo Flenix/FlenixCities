@@ -1,23 +1,22 @@
 package co.uk.silvania.city.tileentities.containers;
 
+import java.text.DecimalFormat;
+
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.resources.I18n;
 import net.minecraft.client.resources.ResourceLocation;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
 import co.uk.silvania.city.tileentities.TileEntityATMEntity;
+import co.uk.silvania.city.tileentities.blocks.TileEntityATMBlock;
 
 public class GuiATM extends GuiContainer {
 	
-	private static int balance = 0;
+	//DecimalFormat decim = new DecimalFormat("0.00");
 	
     private static final ResourceLocation texture = new ResourceLocation("flenixcities", "/textures/gui/atm.png");
 
@@ -25,30 +24,20 @@ public class GuiATM extends GuiContainer {
         	super(new ContainerATM(inventoryPlayer, tileEntity));
         }
         
-        public void readFromNBT(NBTTagCompound par1NBTTagCompound, EntityPlayer player) {
-        	NBTTagCompound nbt = player.getEntityData();
-        	balance = nbt.getInteger("Balance");
-        }
-        
-        /** The X size of the inventory window in pixels. */
         protected int xSize = 176;
-
-        /** The Y size of the inventory window in pixels. */
-        protected int ySize = 182;
+        protected int ySize = 198;
         
         @Override
         protected void drawGuiContainerForegroundLayer(int param1, int param2) {
-        	//NBTTagCompound nbt = player.getEntityData();
-        	fontRenderer.drawString("ATM", 8, 0, 4210752);
-        	fontRenderer.drawString("Balance", 8, 17, 4210752);
-        	fontRenderer.drawString("Safe", 132, -3, 4210752);
-        	fontRenderer.drawString("Deposit", 124, 5, 4210752);
-        	fontRenderer.drawString("Withdraw", 8, 37, 4210752);
-        	fontRenderer.drawString("Deposit", 8, 57, 4210752);
-        	fontRenderer.drawString("" + balance, 58, 17, 1237000);
-        	fontRenderer.drawString("345.67", 58, 37, 1237000);
-        	fontRenderer.drawString("789.01", 58, 57, 1237000);
-        	fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, ySize - 103, 4210752);
+        	fontRenderer.drawString("ATM", 8, -8, 4210752);
+        	fontRenderer.drawString("Balance", 8, 9, 4210752);
+        	fontRenderer.drawString("Safe", 132, -11, 4210752);
+        	fontRenderer.drawString("Deposit", 124, -3, 4210752);
+        	fontRenderer.drawString("Withdraw", 8, 29, 4210752);
+        	fontRenderer.drawString("Deposit", 42, 68, 4210752);
+        	fontRenderer.drawString("$" + TileEntityATMBlock.playerBalance, 58, 9, 1237000);
+        	fontRenderer.drawString("345.67", 58, 29, 1237000);
+        	fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, ySize - 111, 4210752);
         }
 
         @Override

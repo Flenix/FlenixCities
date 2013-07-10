@@ -1,4 +1,4 @@
-package co.uk.silvania.city.tileentities.blocks;
+package co.uk.silvania.city.items.itemblocks;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
