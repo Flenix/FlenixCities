@@ -147,6 +147,11 @@ public class CityConfig {
 	public static String currencySmallPlural;
 	
 	public static boolean isAdultMode;
+	public static boolean generateCopper;
+	public static boolean generateTin;
+	public static boolean generateSilver;
+	public static boolean generateTitanium;
+	public static boolean generateRuby;
 	
 	
 	public static void loadConfig(FMLPreInitializationEvent event) {
@@ -284,6 +289,11 @@ public class CityConfig {
 		currencyLargePlural = config.get("Currency Large (Plural)", Configuration.CATEGORY_GENERAL, "Dollars").getString();
 		
 		isAdultMode = config.get(Configuration.CATEGORY_GENERAL, "isAdultMode", false).getBoolean(false);
+		generateCopper = config.get(Configuration.CATEGORY_GENERAL, "generateCopper", true).getBoolean(true);
+		generateTin = config.get(Configuration.CATEGORY_GENERAL, "generateTin", true).getBoolean(true);
+		generateTitanium = config.get(Configuration.CATEGORY_GENERAL, "generateTitanium", true).getBoolean(true);
+		generateSilver = config.get(Configuration.CATEGORY_GENERAL, "generateSilver", true).getBoolean(true);
+		generateRuby = config.get(Configuration.CATEGORY_GENERAL, "generateRuby", true).getBoolean(true);
 		
 		heroinItemID = config.getItem("Heroin", 18100).getInt();
 		weedItemID = config.getItem("Weed", 18101).getInt();

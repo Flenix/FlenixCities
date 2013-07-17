@@ -28,6 +28,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
+import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -208,6 +209,8 @@ public class FlenixCities {
 	public static Item tennisBall;
 	public static Item soccerBall;
 	public static Item tennisRacquet;
+	
+	public static WorldGen worldGen = new WorldGen();
 
 	//And finally the worldgen
 	//public static WorldGen worldGen = new WorldGen();
@@ -396,6 +399,16 @@ public class FlenixCities {
         LanguageRegistry.instance().addStringLocalization("itemGroup.tabCity", "en_US", "Cities: Blocks");
         LanguageRegistry.instance().addStringLocalization("itemGroup.tabEcon", "en_US", "Cities: Economy");
         LanguageRegistry.instance().addStringLocalization("itemGroup.tabItems", "en_US", "Cities: Items");
+        
+        GameRegistry.registerWorldGenerator(new WorldGen());
+        
+        OreDictionary.registerOre("oreCopper", new ItemStack(copperOre));
+        OreDictionary.registerOre("oreTin", new ItemStack(tinOre));
+        OreDictionary.registerOre("oreSilver", new ItemStack(silverOre));
+        OreDictionary.registerOre("oreTitanium", new ItemStack(titaniumOre));
+        OreDictionary.registerOre("oreRuby", new ItemStack(rubyOre));
+        OreDictionary.registerOre("oreTecmonium", new ItemStack(tecmoniumOre));
+        OreDictionary.registerOre("oreCrystal", new ItemStack(crystalOre));
     }
 
 
