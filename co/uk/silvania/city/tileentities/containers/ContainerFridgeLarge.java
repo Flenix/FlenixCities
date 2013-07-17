@@ -20,9 +20,9 @@ public class ContainerFridgeLarge extends Container {
 	public ContainerFridgeLarge (InventoryPlayer inventoryPlayer, TileEntityFridgeLarge te) {
 		tileEntity = te;
 		//Main Storage
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 3; j++) {
-				addSlotToContainer(new Slot(tileEntity, i + j * 3 + 1, 116 + j * 18, 16 + i * 18));
+				addSlotToContainer(new Slot(tileEntity, i + j, 62 + j * 18, -6 + i * 18));
 			}
 		}
 		bindPlayerInventory(inventoryPlayer);
@@ -37,12 +37,12 @@ public class ContainerFridgeLarge extends Container {
     protected void bindPlayerInventory(InventoryPlayer inventoryPlayer) {
             for (int m = 0; m < 3; m++) {
                     for (int n = 0; n < 9; n++) {
-                            addSlotToContainer(new Slot(inventoryPlayer, n + m * 9 + 9, 8 + n * 18, 92 + m * 18));
+                            addSlotToContainer(new Slot(inventoryPlayer, n + m * 9 + 9, 8 + n * 18, 110 + m * 18));
                     }
             }
             //Player's hotbar
             for (int o = 0; o < 9; o++) {
-                    addSlotToContainer(new Slot(inventoryPlayer, o, 8 + o * 18, 150));
+                    addSlotToContainer(new Slot(inventoryPlayer, o, 8 + o * 18, 168));
             }
     }
 

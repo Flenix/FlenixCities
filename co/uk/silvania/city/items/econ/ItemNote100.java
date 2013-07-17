@@ -6,9 +6,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 
-public class ItemNote100 extends Item {
-	
-	public static int moneyValue = 10000;
+public class ItemNote100 extends ItemNote {
 
 	public ItemNote100(int id) {
 		super(id);
@@ -20,4 +18,9 @@ public class ItemNote100 extends Item {
 	public void registerIcons(IconRegister iconRegister) {
         itemIcon = iconRegister.registerIcon("flenixcities:Note10000");
 	}
+	
+    @Override
+    public double getMoneyValue() {
+        return 100.00;
+    }
 }

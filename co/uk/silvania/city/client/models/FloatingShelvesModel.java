@@ -18,19 +18,19 @@ public class FloatingShelvesModel extends ModelBase
     
       Shape1 = new ModelRenderer(this, 0, 0);
       Shape1.addBox(0F, 0F, 0F, 16, 16, 1);
-      Shape1.setRotationPoint(-8F, 8F, -0.5F);
+      Shape1.setRotationPoint(-8F, 8F, 7F);
       Shape1.setTextureSize(64, 32);
       Shape1.mirror = true;
       setRotation(Shape1, 0F, 0F, 0F);
       Shape2 = new ModelRenderer(this, 0, 17);
-      Shape2.addBox(0F, 0F, 0F, 16, 1, 12);
-      Shape2.setRotationPoint(-8F, 15F, -6F);
+      Shape2.addBox(0F, 0F, 0F, 16, 1, 8);
+      Shape2.setRotationPoint(-8F, 15F, -1F);
       Shape2.setTextureSize(64, 32);
       Shape2.mirror = true;
       setRotation(Shape2, 0F, 0F, 0F);
       Shape3 = new ModelRenderer(this, 0, 17);
-      Shape3.addBox(0F, 0F, 0F, 16, 1, 12);
-      Shape3.setRotationPoint(-8F, 23F, -6F);
+      Shape3.addBox(0F, 0F, 0F, 16, 1, 8);
+      Shape3.setRotationPoint(-8F, 23F, -1F);
       Shape3.setTextureSize(64, 32);
       Shape3.mirror = true;
       setRotation(Shape3, 0F, 0F, 0F);

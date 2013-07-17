@@ -19,5 +19,16 @@ public class ClientProxy extends CommonProxy {
         	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFloatingShelves.class, new TileEntityFloatingShelvesRenderer());
         	ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySchoolDesk.class, new TileEntitySchoolDeskRenderer());
         	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityToilet.class, new TileEntityToiletRenderer());
+        	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityKeyboard.class, new TileEntityKeyboardRenderer());
+        	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityLaptop.class, new TileEntityLaptopRenderer());
+        	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMonitorSmall.class, new TileEntityMonitorSmallRenderer());
+        	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMonitorStandingLarge.class, new TileEntityMonitorStandingLargeRenderer());
+        	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMonitorWallLarge.class, new TileEntityMonitorWallLargeRenderer());
+        	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMouse.class, new TileEntityMouseRenderer());
+        	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMouseKeyboard.class, new TileEntityMouseKeyboardRenderer());
+        	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPC.class, new TileEntityPCRenderer());
+        	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityServerRack.class, new TileEntityServerRackRenderer());
+        	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityVendingMachine.class, new TileEntityVendingMachineRenderer());
+        	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFilingCabinet.class, new TileEntityFilingCabinetRenderer());
         }        
 }

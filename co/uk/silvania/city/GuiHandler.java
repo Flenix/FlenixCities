@@ -45,6 +45,18 @@ public class GuiHandler implements IGuiHandler {
                         return new ContainerSchoolDesk(player.inventory, (TileEntitySchoolDesk) tileEntity);
                 }	
         	}
+        	case 5: {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if(tileEntity instanceof TileEntityVendingMachine) {
+                        return new ContainerVendingMachine(player.inventory, (TileEntityVendingMachine) tileEntity);
+                }	
+        	}
+        	case 6: {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if(tileEntity instanceof TileEntityFilingCabinet) {
+                        return new ContainerFilingCabinet(player.inventory, (TileEntityFilingCabinet) tileEntity);
+                }	
+        	}
         }
 			return null;	
     }
@@ -80,6 +92,18 @@ public class GuiHandler implements IGuiHandler {
                 TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
                 if(tileEntity instanceof TileEntitySchoolDesk) {
                         return new GuiSchoolDesk(player.inventory, (TileEntitySchoolDesk) tileEntity, world, x, y, z);
+                }	
+        	}
+        	case 5: {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if(tileEntity instanceof TileEntityVendingMachine) {
+                        return new GuiVendingMachine(player.inventory, (TileEntityVendingMachine) tileEntity, world, x, y, z);
+                }	
+        	}
+        	case 6: {
+                TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+                if(tileEntity instanceof TileEntityFilingCabinet) {
+                        return new GuiFilingCabinet(player.inventory, (TileEntityFilingCabinet) tileEntity, world, x, y, z);
                 }	
         	}
         }

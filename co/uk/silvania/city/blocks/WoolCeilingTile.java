@@ -6,6 +6,7 @@ import co.uk.silvania.city.FlenixCities;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockColored;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -21,20 +22,20 @@ public class WoolCeilingTile extends Block {
 	}
 	
 	@SideOnly(Side.CLIENT)
-	private Icon[] icons;
+	private Icon base;
 
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-		icons = new Icon[16];
-
-		for(int i = 0; i < icons.length; i++) {
-			icons[i] = iconRegister.registerIcon("FlenixCities:" + (this.getUnlocalizedName().substring(5)) + i);
-		}
+		base = iconRegister.registerIcon("FlenixCities:CeilingTile");
 	}
+	
 
 	@SideOnly(Side.CLIENT)
-	public Icon getIcon(int par1, int par2) {
-		return icons[par2];
+	public Icon getIcon(int side, int metadata) {
+		if (side == 0) {
+			return base;
+		} 
+		return Block.cloth.getIcon(side, metadata);
 	}
 
 	@SideOnly(Side.CLIENT)

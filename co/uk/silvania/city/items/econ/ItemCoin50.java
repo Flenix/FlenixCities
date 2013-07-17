@@ -7,9 +7,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 
-public class ItemCoin50 extends Item {
-	
-	public static int moneyValue = 50;
+public class ItemCoin50 extends ItemCoin {
 
 	public ItemCoin50(int id) {
 		super(id);
@@ -22,4 +20,9 @@ public class ItemCoin50 extends Item {
 	public void registerIcons(IconRegister iconRegister) {
         itemIcon = iconRegister.registerIcon("flenixcities:Coin50");
 	}
+	
+    @Override
+    public double getMoneyValue() {
+        return 0.50;
+    }
 }

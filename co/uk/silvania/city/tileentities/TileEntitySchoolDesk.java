@@ -18,7 +18,7 @@ import net.minecraft.util.AxisAlignedBB;
 
 public class TileEntitySchoolDesk extends TileEntityChest implements IInventory
 {
-    private ItemStack[] schoolDeskContents = new ItemStack[9];
+    private ItemStack[] schoolDeskContents = new ItemStack[10];
 
     public int numUsingPlayers;
 
@@ -27,7 +27,7 @@ public class TileEntitySchoolDesk extends TileEntityChest implements IInventory
 
     public int getSizeInventory()
     {
-        return 9;
+        return 10;
     }
 
     public ItemStack getStackInSlot(int par1)

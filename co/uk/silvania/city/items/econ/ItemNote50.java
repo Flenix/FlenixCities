@@ -9,9 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
-public class ItemNote50 extends Item {
-	
-	public static int moneyValue = 5000;
+public class ItemNote50 extends ItemNote {
 
 	public ItemNote50(int id) {
 		super(id);
@@ -24,8 +22,8 @@ public class ItemNote50 extends Item {
         itemIcon = iconRegister.registerIcon("flenixcities:Note5000");
 	}
 	
-	public static void saveBalanceForPlayer(EntityPlayer player, World world) {
-		NBTTagCompound nbt = player.getEntityData();
-		nbt.setInteger("Balance", (nbt.getInteger("Balance") + moneyValue));
-	}
+    @Override
+    public double getMoneyValue() {
+        return 50.00;
+    }
 }

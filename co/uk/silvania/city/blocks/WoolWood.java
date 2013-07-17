@@ -9,8 +9,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.world.World;
 
 public class WoolWood extends Block {
 
@@ -21,26 +24,22 @@ public class WoolWood extends Block {
 	}
 	
 	@SideOnly(Side.CLIENT)
-	private Icon[] icons;
-
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		icons = new Icon[16];
-
-		for(int i = 0; i < icons.length; i++) {
-			icons[i] = iconRegister.registerIcon("FlenixCities:" + (this.getUnlocalizedName().substring(5)) + i);
-		}
+	public Icon getIcon(int side, int meta) {
+		if (side == 0) {
+			return Block.planks.getIcon(side, 0);
+		} 
+		return Block.cloth.getIcon(side, meta);
 	}
-
-	@SideOnly(Side.CLIENT)
-	public Icon getIcon(int par1, int par2) {
-		return icons[par2];
-	}
-
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs creativeTabs, List list) {
 		for (int var4 = 0; var4 < 16; ++var4) {
 			list.add(new ItemStack(par1, 1, var4));
 		}
+	}
+	
+	@Override
+	public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z) {
+		return null;
+				
 	}
 }

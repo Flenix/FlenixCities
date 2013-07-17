@@ -7,10 +7,8 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 
-public class ItemCoin2 extends Item {
+public class ItemCoin2 extends ItemCoin {
 	
-	public static int moneyValue = 2;
-
 	public ItemCoin2(int id) {
 		super(id);
 		this.setMaxStackSize(50);
@@ -22,4 +20,9 @@ public class ItemCoin2 extends Item {
 	public void registerIcons(IconRegister iconRegister) {
         itemIcon = iconRegister.registerIcon("flenixcities:Coin2");
 	}
+	
+    @Override
+    public double getMoneyValue() {
+        return 0.02;
+    }
 }

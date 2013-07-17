@@ -16,7 +16,7 @@ import net.minecraft.util.AxisAlignedBB;
 
 public class TileEntityFridgeLarge extends TileEntityChest implements IInventory
 {
-    private ItemStack[] fridgeLargeContents = new ItemStack[14];
+    private ItemStack[] fridgeLargeContents = new ItemStack[19];
 
     public int numUsingPlayers;
 
@@ -25,7 +25,7 @@ public class TileEntityFridgeLarge extends TileEntityChest implements IInventory
 
     public int getSizeInventory()
     {
-        return 14;
+        return 19;
     }
 
     public ItemStack getStackInSlot(int par1)

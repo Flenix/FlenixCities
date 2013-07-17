@@ -65,9 +65,15 @@ public class FlenixCities {
 		}
 	};
 	
+	public static CreativeTabs tabItems = new CreativeTabs("tabItems") {
+		public ItemStack getIconItemStack() {
+			return new ItemStack(Block.cake, 1, 0);
+		}
+	};
+	
 	public static CreativeTabs tabEcon = new CreativeTabs("tabEcon") {
 		public ItemStack getIconItemStack() {
-			return new ItemStack(FlenixCities.coin100, 1, 0);
+			return new ItemStack(FlenixCities.atmBlock, 1, 0);
 		}
 	};
 			
@@ -79,6 +85,17 @@ public class FlenixCities {
 	public static Block floatingShelvesBlock;
 	public static Block schoolDeskBlock;
 	public static Block toiletBlock;
+	public static Block vendingMachine;
+	public static Block keyboardBlock;
+	public static Block laptopBlock;
+	public static Block monitorSmall;
+	public static Block monitorStandingLarge;
+	public static Block monitorWallLarge;
+	public static Block mouseBlock;
+	public static Block mouseKeyboardBlock;
+	public static Block serverRack;
+	public static Block pcBlock;
+	public static Block filingCabinet;
 	
 	public static Block rubyOre;
 	public static Block silverOre;
@@ -89,10 +106,16 @@ public class FlenixCities {
 	public static Block stainedGlassLit;
 	public static Block streetBlocks;
 	public static Block styledGlass;
-	public static Block styledGlassLit;
+	public static Block styledGlassWhite;
 	public static Block woolCeilingTile;
 	public static Block woolStone;
 	public static Block woolWood;
+	public static Block copperOre;
+	public static Block tinOre;
+	public static Block crystalOre;
+	public static Block plasticBlock;
+	public static Block computerTower;
+	public static Block floorBlocks;
 	
 	public static Item coin1;
 	public static Item coin2;
@@ -110,8 +133,14 @@ public class FlenixCities {
 	public static Item note10000;
 	public static Item prePaidCard;
 	public static Item debitCard;
+	public static Item atmItem;
 	
 	public static Item heroinItem;
+	public static Item weedItem;
+	public static Item tobaccoItem;
+	public static Item rollingPaper;
+	public static Item syringeItem;
+	public static Item needleItem;
 	
 	public static Item foodBurger;
 	public static Item foodHotDog;
@@ -138,6 +167,47 @@ public class FlenixCities {
 	public static Item drinkMilkshake;
 	public static Item drinkCoffee;
 	public static Item drinkHotChocolate;
+	
+	public static Item smallBulletCasing;
+	public static Item medBulletCasing;
+	public static Item largeBulletCasing;
+	public static Item gunBarrel;
+	public static Item gunMagazine;
+	public static Item gunTriggerMechanism;
+	public static Item gunStock;
+	public static Item gunPump;
+	public static Item groundPoppy;
+	public static Item plasticItem;
+	public static Item smallPCB;
+	public static Item largePCB;
+	public static Item spentShotgunRound;
+	public static Item smallFossil;
+	public static Item largeFossil;
+	public static Item ringItem;
+	public static Item diamondRing;
+	public static Item necklaceItem;
+	public static Item rubyNecklace;
+	public static Item ancientSlab;
+	public static Item crushedCan;
+	public static Item crushedPlasticBottle;
+	public static Item chocolateWrapper;
+	public static Item emptyCrispPacket;
+	public static Item wastePackaging;
+	public static Item rubyItem;
+	public static Item titaniumIngot;
+	public static Item tecmoniumIngot;
+	public static Item silverIngot;
+	public static Item copperIngot;
+	public static Item tinIngot;
+	public static Item trainTicket;
+	public static Item theatreTicket;
+	public static Item alligatorLeather;
+	public static Item baseballBat;
+	public static Item baseballItem;
+	public static Item americanFootball;
+	public static Item tennisBall;
+	public static Item soccerBall;
+	public static Item tennisRacquet;
 
 	//And finally the worldgen
 	//public static WorldGen worldGen = new WorldGen();
@@ -166,10 +236,26 @@ public class FlenixCities {
     	schoolDeskBlock = new SchoolDeskBlock(config.schoolDeskID).setUnlocalizedName("schoolDeskBlock");
     	floatingShelvesBlock = new FloatingShelvesBlock(config.floatingShelvesID).setUnlocalizedName("floatingShelvesBlock");
     	toiletBlock = new ToiletBlock(config.toiletID).setUnlocalizedName("toiletBlock");
+    	vendingMachine = new VendingMachineBlock(config.vendingMachineID).setUnlocalizedName("vendingMachine");
+    	keyboardBlock = new KeyboardBlock(config.keyboardBlockID).setUnlocalizedName("keyboardBlock");
+    	laptopBlock = new LaptopBlock(config.laptopBlockID).setUnlocalizedName("laptopBlock");
+    	monitorSmall = new MonitorSmallBlock(config.monitorSmallID).setUnlocalizedName("monitorSmall");
+    	monitorStandingLarge = new MonitorStandingLargeBlock(config.monitorStandingLargeID).setUnlocalizedName("monitorStandingLarge");
+    	monitorWallLarge = new MonitorWallLarge(config.monitorWallLargeID).setUnlocalizedName("monitorWallLarge");
+    	mouseBlock = new MouseBlock(config.mouseBlockID).setUnlocalizedName("mouseBlock");
+    	mouseKeyboardBlock = new MouseKeyboardBlock(config.mouseKeyboardBlockID).setUnlocalizedName("mouseKeyboardBlock");
+    	serverRack = new ServerRackBlock(config.serverRackID).setUnlocalizedName("serverRack");
+    	pcBlock = new PCBlock(config.pcBlockID).setUnlocalizedName("pcBlock");
+    	floorBlocks = new FloorBlocks(config.floorBlocksID).setUnlocalizedName("floorBlocks");
     	
     	//Adult Mode Stuff
     	if (CityConfig.isAdultMode == true) {
     		heroinItem = new HeroinItem(config.heroinItemID).setUnlocalizedName("heroinItem");
+    		tobaccoItem = new CraftingIngredientItems(config.tobaccoItemID, 64).setUnlocalizedName("tobaccoItem");
+    		rollingPaper = new CraftingIngredientItems(config.rollingPaperID, 64).setUnlocalizedName("rollingPaper");
+    		syringeItem = new CraftingIngredientItems(config.syringeItemID, 64).setUnlocalizedName("syringeItem");
+    		needleItem = new CraftingIngredientItems(config.needleItemID, 64).setUnlocalizedName("needleItem");
+    		weedItem = new CraftingIngredientItems(config.weedItemID, 64).setUnlocalizedName("weedItem");
     	}
     	
     	//General Blocks
@@ -182,10 +268,16 @@ public class FlenixCities {
     	stainedGlassLit = new StainedGlassLit(config.stainedGlassLitID).setUnlocalizedName("stainedGlassLit");
     	streetBlocks = new StreetBlocks(config.streetBlocksID).setUnlocalizedName("streetBlocks");
     	styledGlass = new StyledGlass(config.styledGlassID).setUnlocalizedName("styledGlass");
-    	styledGlassLit = new StyledGlassLit(config.styledGlassLitID).setUnlocalizedName("styledGlassLit");
+    	styledGlassWhite = new StyledGlassLit(config.styledGlassLitID).setUnlocalizedName("styledGlassWhite");
     	woolCeilingTile = new WoolCeilingTile(config.woolCeilingTileID).setUnlocalizedName("woolCeilingTile");
     	woolStone = new WoolStone(config.woolStoneID).setUnlocalizedName("woolStone");
     	woolWood = new WoolWood(config.woolWoodID).setUnlocalizedName("woolWood");
+    	copperOre = new CopperOre(config.copperOreID).setUnlocalizedName("copperOre");
+    	tinOre = new TinOre(config.tinOreID).setUnlocalizedName("tinOre");
+    	crystalOre = new CrystalOre(config.crystalOreID).setUnlocalizedName("crystalOre");
+    	plasticBlock = new PlasticBlocks(config.plasticBlockID).setUnlocalizedName("plasticBlock");
+    	computerTower = new ComputerTowerBlock(config.computerTowerID).setUnlocalizedName("computerTower");
+    	filingCabinet = new FilingCabinetBlock(config.filingCabinetID).setUnlocalizedName("filingCabinet");
     	
     	//Economy Items
     	coin1 = new ItemCoin1(config.coin1ID).setUnlocalizedName("coin1");
@@ -203,7 +295,8 @@ public class FlenixCities {
     	note5000 = new ItemNote50(config.note5000ID).setUnlocalizedName("note10000");
     	note10000 = new ItemNote100(config.note10000ID).setUnlocalizedName("note10000");
     	prePaidCard = new PrePaidCard(config.prePaidCardID).setUnlocalizedName("prePaidCard");
-    	debitCard = new DebitCard(config.debitCardID).setUnlocalizedName("debitCard");    
+    	debitCard = new DebitCard(config.debitCardID).setUnlocalizedName("debitCard");
+    	atmItem = new ATMItem(config.atmItemID).setUnlocalizedName("atmItem");
     	
     	//Food/Drinks:
     	foodBurger = new CityFoods(config.foodBurgerID, 14, 1.1F, true).setUnlocalizedName("foodBurger");
@@ -231,31 +324,79 @@ public class FlenixCities {
     	drinkMilkshake = new CityDrinks(config.drinkMilkshakeID, 5, false).setUnlocalizedName("drinkMilkshake");
     	drinkCoffee = new CityDrinks(config.drinkCoffeeID, 4, false).setUnlocalizedName("drinkCoffee");
     	drinkHotChocolate = new CityDrinks(config.drinkHotChocolateID, 2, false).setUnlocalizedName("drinkHotChocolate");
+    	
+    	//Generic Items
+    	smallBulletCasing = new CraftingIngredientItems(config.smallBulletCasingID, 64).setUnlocalizedName("smallBulletCasing");
+    	medBulletCasing = new CraftingIngredientItems(config.medBulletCasingID, 64).setUnlocalizedName("medBulletCasing");
+    	largeBulletCasing = new CraftingIngredientItems(config.largeBulletCasingID, 64).setUnlocalizedName("largeBulletCasing");
+    	gunBarrel = new CraftingIngredientItems(config.gunBarrelID, 1).setUnlocalizedName("gunBarrel");
+    	gunMagazine = new CraftingIngredientItems(config.gunMagazineID, 1).setUnlocalizedName("gunMagazine");
+    	gunTriggerMechanism = new CraftingIngredientItems(config.gunTriggerMechanismID, 1).setUnlocalizedName("gunTriggerMechanism");
+    	gunStock = new CraftingIngredientItems(config.gunStockID, 1).setUnlocalizedName("gunStock");
+		gunPump = new CraftingIngredientItems(config.gunPumpID, 1).setUnlocalizedName("gunPump");
+		groundPoppy = new CraftingIngredientItems(config.groundPoppyID, 64).setUnlocalizedName("groundPoppy");
+		plasticItem = new CraftingIngredientItems(config.plasticItemID, 64).setUnlocalizedName("plasticItem");
+		smallPCB = new CraftingIngredientItems(config.smallPCBID, 64).setUnlocalizedName("smallPCB");
+		largePCB = new CraftingIngredientItems(config.largePCBID, 64).setUnlocalizedName("largePCB");
+		spentShotgunRound = new CraftingIngredientItems(config.spentShotgunRoundID, 64).setUnlocalizedName("spentShotgunRound");
+		smallFossil = new CraftingIngredientItems(config.smallFossilID, 16).setUnlocalizedName("smallFossil");
+		largeFossil = new CraftingIngredientItems(config.largeFossilID, 4).setUnlocalizedName("largeFossil");
+		ringItem = new CraftingIngredientItems(config.ringItemID, 64).setUnlocalizedName("ringItem");
+		diamondRing = new CraftingIngredientItems(config.diamondRingID, 64).setUnlocalizedName("diamondRing");
+		necklaceItem = new CraftingIngredientItems(config.necklaceItemID, 64).setUnlocalizedName("necklaceItem");
+		rubyNecklace = new CraftingIngredientItems(config.rubyNecklaceID, 64).setUnlocalizedName("rubyNecklace");
+		ancientSlab = new CraftingIngredientItems(config.ancientSlabID, 1).setUnlocalizedName("ancientSlab");
+		crushedCan = new CraftingIngredientItems(config.crushedCanID, 64).setUnlocalizedName("crushedCan");
+		crushedPlasticBottle = new CraftingIngredientItems(config.crushedPlasticBottleID, 64).setUnlocalizedName("crushedPlasticBottle");
+		chocolateWrapper = new CraftingIngredientItems(config.chocolateWrapperID, 64).setUnlocalizedName("chocolateWrapper");
+		emptyCrispPacket = new CraftingIngredientItems(config.emptyCrispPacketID, 64).setUnlocalizedName("emptyCrispPacket");
+		wastePackaging = new CraftingIngredientItems(config.wastePackagingID, 64).setUnlocalizedName("wastePackaging");
+		rubyItem = new CraftingIngredientItems(config.rubyItemID, 64).setUnlocalizedName("rubyItem");
+		titaniumIngot = new CraftingIngredientItems(config.titaniumIngotID, 64).setUnlocalizedName("titaniumIngotItem");
+		tecmoniumIngot = new CraftingIngredientItems(config.tecmoniumIngotID, 64).setUnlocalizedName("tecmoniumIngot");
+		silverIngot = new CraftingIngredientItems(config.silverIngotID, 64).setUnlocalizedName("silverIngot");
+		copperIngot = new CraftingIngredientItems(config.copperIngotID, 64).setUnlocalizedName("copperIngot");
+		tinIngot = new CraftingIngredientItems(config.tinIngotID, 64).setUnlocalizedName("tinIngot");
+		trainTicket = new CraftingIngredientItems(config.trainTicketID, 64).setUnlocalizedName("trainTicket");
+		theatreTicket = new CraftingIngredientItems(config.theatreTicketID, 64).setUnlocalizedName("theatreTicket");
+		alligatorLeather = new CraftingIngredientItems(config.alligatorLeatherID, 64).setUnlocalizedName("alligatorLeather");
+		baseballBat = new CraftingIngredientItems(config.baseballBatID, 1).setUnlocalizedName("baseballBat");
+		baseballItem = new CraftingIngredientItems(config.baseballItemID, 64).setUnlocalizedName("baseballItem");
+		americanFootball = new CraftingIngredientItems(config.americanFootballID, 64).setUnlocalizedName("americanFootball");
+		tennisBall = new CraftingIngredientItems(config.tennisBallID, 64).setUnlocalizedName("tennisBall");
+		soccerBall = new CraftingIngredientItems(config.soccerBallID, 64).setUnlocalizedName("soccerBall");
+		tennisRacquet = new CraftingIngredientItems(config.tennisRacquetID, 64).setUnlocalizedName("tennisRacquet");
     }
                
     @EventHandler
     public void Init(FMLInitializationEvent event) {        
         proxy.registerBlocks();
         proxy.addNames();    
-    	
-    	/*@ServerStarting
-    	public void serverLoad(FMLServerStartingEvent event) {
-    		event.registerServerCommand(new BalCommand());
-    	}*/
             
-            GameRegistry.registerTileEntity(TileEntityEscalatorEntity.class, "tileEntityEscalator");
-            GameRegistry.registerTileEntity(TileEntityATMEntity.class, "tileEntityATM");
-            GameRegistry.registerTileEntity(TileEntityTravellatorEntity.class, "tileEntityTravellator");
-            GameRegistry.registerTileEntity(TileEntityFridge.class, "tileEntityFridge");
-            GameRegistry.registerTileEntity(TileEntityFridgeLarge.class, "tileEntityFridgeLarge");
-            GameRegistry.registerTileEntity(TileEntitySchoolDesk.class, "tileEntitySchoolDesk");
-            GameRegistry.registerTileEntity(TileEntityFloatingShelves.class, "tileEntityFloatingShelves");
-            GameRegistry.registerTileEntity(TileEntityToilet.class, "tileEntityToilet");
+        GameRegistry.registerTileEntity(TileEntityATMEntity.class, "tileEntityATM");
+        GameRegistry.registerTileEntity(TileEntityEscalatorEntity.class, "tileEntityEscalator");
+        GameRegistry.registerTileEntity(TileEntityFilingCabinet.class, "tileEntityFilingCabinet");
+        GameRegistry.registerTileEntity(TileEntityFloatingShelves.class, "tileEntityFloatingShelves");
+        GameRegistry.registerTileEntity(TileEntityFridge.class, "tileEntityFridge");
+        GameRegistry.registerTileEntity(TileEntityFridgeLarge.class, "tileEntityFridgeLarge");
+        GameRegistry.registerTileEntity(TileEntityKeyboard.class, "tileEntityKeyboard");
+        GameRegistry.registerTileEntity(TileEntityLaptop.class, "tileEntityLaptop");
+        GameRegistry.registerTileEntity(TileEntityMonitorSmall.class, "tileEntityMonitorSmall");
+        GameRegistry.registerTileEntity(TileEntityMonitorStandingLarge.class, "tileEntityMonitorStandingLarge");
+        GameRegistry.registerTileEntity(TileEntityMonitorWallLarge.class, "tileEntityMonitorWallLarge");
+        GameRegistry.registerTileEntity(TileEntityMouse.class, "tileEntityMouse");
+        GameRegistry.registerTileEntity(TileEntityMouseKeyboard.class, "tileEntityMouseKeyboard");
+        GameRegistry.registerTileEntity(TileEntityPC.class, "tileEntityPC");
+        GameRegistry.registerTileEntity(TileEntitySchoolDesk.class, "tileEntitySchoolDesk");
+        GameRegistry.registerTileEntity(TileEntityServerRack.class, "tileEntityServerRack");
+        GameRegistry.registerTileEntity(TileEntityToilet.class, "tileEntityToilet");
+        GameRegistry.registerTileEntity(TileEntityTravellatorEntity.class, "tileEntityTravellator");
+        GameRegistry.registerTileEntity(TileEntityVendingMachine.class, "tileEntityVendingMachine");
             
-            //LiquidContainerRegistry.registerLiquid(new LiquidContainerData(new LiquidStack(FlenixCities.roadsTarStill, LiquidContainerRegistry.BUCKET_VOLUME), new ItemStack(FlenixCities.tarBucketItem), new ItemStack(Item.bucketEmpty)));
-            LanguageRegistry.instance().addStringLocalization("itemGroup.tabCity", "en_US", "Cities: Blocks");
-            LanguageRegistry.instance().addStringLocalization("itemGroup.tabEcon", "en_US", "Cities: Economy");
-        }
+        LanguageRegistry.instance().addStringLocalization("itemGroup.tabCity", "en_US", "Cities: Blocks");
+        LanguageRegistry.instance().addStringLocalization("itemGroup.tabEcon", "en_US", "Cities: Economy");
+        LanguageRegistry.instance().addStringLocalization("itemGroup.tabItems", "en_US", "Cities: Items");
+    }
 
 
     @EventHandler

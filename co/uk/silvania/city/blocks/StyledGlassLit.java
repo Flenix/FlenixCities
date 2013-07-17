@@ -19,7 +19,6 @@ public class StyledGlassLit extends BlockGlass {
 		super(id, Material.glass, true);
 		this.setCreativeTab(FlenixCities.tabCity);
 		this.setHardness(0.3F);
-		this.setLightValue(1.0F);
 	}
 	
 	@SideOnly(Side.CLIENT)

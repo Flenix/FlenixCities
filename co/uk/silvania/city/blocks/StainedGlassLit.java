@@ -22,6 +22,15 @@ public class StainedGlassLit extends BlockGlass {
 		this.setLightValue(1.0F);
 	}
 	
+	public int getRenderId() {
+		return 34;
+	}
+	
+    public int getRenderBlockPass()
+    {
+        return 1;
+    }
+    
 	@SideOnly(Side.CLIENT)
 	private Icon[] icons;
 

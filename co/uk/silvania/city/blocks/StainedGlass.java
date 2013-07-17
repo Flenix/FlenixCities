@@ -19,8 +19,12 @@ public class StainedGlass extends BlockGlass {
 		super(id, Material.glass, true);
 		this.setCreativeTab(FlenixCities.tabCity);
 		this.setHardness(0.3F);
-		this.setLightValue(1.0F);
 	}
+	
+    public int getRenderBlockPass()
+    {
+        return 1;
+    }
 	
 	@SideOnly(Side.CLIENT)
 	private Icon[] icons;

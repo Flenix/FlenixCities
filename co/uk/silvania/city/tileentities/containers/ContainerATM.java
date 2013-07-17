@@ -20,7 +20,7 @@ public class ContainerATM extends Container {
 	public ContainerATM (InventoryPlayer inventoryPlayer, TileEntityATMEntity te) {
 		tileEntity = te;
 		//Main Storage
-		for (int i = 0; i < 4; i++) {
+		/*for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 3; j++) {
 				addSlotToContainer(new Slot(tileEntity, i + j * 3 + 1, 116 + j * 18, 8 + i * 18));
 			}
@@ -30,7 +30,7 @@ public class ContainerATM extends Container {
 				addSlotToContainer(new Slot(tileEntity, i + j * 3 + 1, 17 + j * 18, 44 + i * 18));
 			}
 		}
-		bindPlayerInventory(inventoryPlayer);
+		bindPlayerInventory(inventoryPlayer);*/
 	}
 
     @Override
@@ -39,7 +39,7 @@ public class ContainerATM extends Container {
     }
 
     //Player Inventory
-    protected void bindPlayerInventory(InventoryPlayer inventoryPlayer) {
+    /*protected void bindPlayerInventory(InventoryPlayer inventoryPlayer) {
             for (int m = 0; m < 3; m++) {
                     for (int n = 0; n < 9; n++) {
                             addSlotToContainer(new Slot(inventoryPlayer, n + m * 9 + 9, 8 + n * 18, 100 + m * 18));
@@ -49,7 +49,7 @@ public class ContainerATM extends Container {
             for (int o = 0; o < 9; o++) {
                     addSlotToContainer(new Slot(inventoryPlayer, o, 8 + o * 18, 158));
             }
-    }
+    }*/
 
     public static Set validItems = new HashSet();
     

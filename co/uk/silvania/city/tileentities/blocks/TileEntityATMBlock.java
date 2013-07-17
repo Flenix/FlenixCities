@@ -1,10 +1,12 @@
 package co.uk.silvania.city.tileentities.blocks;
 
 import java.util.List;
+import java.util.Random;
 
+import co.uk.silvania.city.CityConfig;
 import co.uk.silvania.city.FlenixCities;
 import co.uk.silvania.city.NBTConfig;
-import co.uk.silvania.city.items.econ.ItemNote10;
+import co.uk.silvania.city.items.econ.*;
 import co.uk.silvania.city.tileentities.TileEntityATMEntity;
 import cpw.mods.fml.common.Mod.Metadata;
 import cpw.mods.fml.relauncher.Side;
@@ -46,11 +48,11 @@ public class TileEntityATMBlock extends BlockContainer {
 		return -1;
 	}
 	
-	//Huge thanks to "maxpowa" in helping me get this working!!
-	//Temporary Economy deposit system. Eventually this will happen inside the GUI, you will place in money and it'll get sucked into the bank,
-	//and the bank will pay you. For now, this is fine, and the code will be effectively the same anyway.
+
+    // Huge thanks to "maxpowa" in helping me get this working!!
     @Override
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int i, float j, float k, float l) {
+    public boolean onBlockActivated(World world, int x, int y, int z,
+            EntityPlayer player, int i, float j, float k, float l) {
         if (!world.isRemote) {
             if (player.getHeldItem() != null) {
                 if (player.getHeldItem().getItem() == FlenixCities.debitCard) {
@@ -58,40 +60,71 @@ public class TileEntityATMBlock extends BlockContainer {
                     NBTTagCompound nbt = NBTConfig.getTagCompoundInFile(NBTConfig.getWorldConfig(world));
                     if (nbt.hasKey(player.username)) {
                         NBTTagCompound playernbt = nbt.getCompoundTag(player.username);
-                        if (playernbt.hasKey("Balance")) 
+                        if (playernbt.hasKey("Balance")) {
                             balance = playernbt.getDouble("Balance");
+                        }
                     }
                     player.addChatMessage("Your Balance is: " + balance);
                     player.openGui(FlenixCities.instance, 0, world, x, y, z);
                 }
             }
-        if (player.getHeldItem() != null) {
-            if (player.getHeldItem().getItem() == FlenixCities.note1000) {
-                double currentBalance = 0;
-                NBTTagCompound nbt = NBTConfig.getTagCompoundInFile(NBTConfig.getWorldConfig(world));
-                if (nbt.hasKey(player.username)) {
+            NBTTagCompound nbt = NBTConfig.getTagCompoundInFile(NBTConfig.getWorldConfig(world));
+            ItemStack item = player.getHeldItem();
+            // Coin 1
+            if (player.getHeldItem() != null) {
+                if (player.getHeldItem().getItem() instanceof ItemCoin) {
+                    System.out.println("Found ItemCoin");
+                    ItemCoin coin = (ItemCoin) player.getHeldItem().getItem();
+                    double currentBalance = 0;
+                    if (nbt.hasKey(player.username)) {
+                        NBTTagCompound playernbt = nbt.getCompoundTag(player.username);
+                        if (playernbt.hasKey("Balance")) {
+                            currentBalance = playernbt.getDouble("Balance");
+                        }
+                        double modifiedBalance = currentBalance + coin.getMoneyValue();
+                        playernbt.setDouble("Balance", modifiedBalance);
+                        nbt.setCompoundTag(player.username, playernbt);
+                    } else {
+                        NBTTagCompound playernbt = new NBTTagCompound();
+                        if (playernbt.hasKey("Balance")) {
+                            currentBalance = playernbt.getDouble("Balance");
+                        }
+                        double modifiedBalance = currentBalance + coin.getMoneyValue();
+                        playernbt.setDouble("Balance", modifiedBalance);
+                        nbt.setCompoundTag(player.username, playernbt);
+                    }
                     NBTTagCompound playernbt = nbt.getCompoundTag(player.username);
-                    if (playernbt.hasKey("Balance"))
-                        currentBalance = playernbt.getDouble("Balance");
-                    double modifiedBalance = currentBalance + ItemNote10.moneyValue;
-                    playernbt.setDouble("Balance", modifiedBalance);
-                    nbt.setCompoundTag(player.username, playernbt);
-                } else {
-                    NBTTagCompound playernbt = new NBTTagCompound();
-                    if (playernbt.hasKey("Balance"))
-                        currentBalance = playernbt.getDouble("Balance");
-                    double modifiedBalance = currentBalance + ItemNote10.moneyValue;
-                    playernbt.setDouble("Balance", modifiedBalance);
-                    nbt.setCompoundTag(player.username, playernbt);
+                    player.addChatMessage(coin.getMoneyValue() + " " + CityConfig.currencyLarge + " Deposited! Your balance is now " + playernbt.getDouble("Balance") + " " + CityConfig.currencyLargePlural);
+                    NBTConfig.saveConfig(nbt, NBTConfig.getWorldConfig(world));
+                    --item.stackSize;
+                } else if (player.getHeldItem().getItem() instanceof ItemNote) {
+                    ItemNote note = (ItemNote) player.getHeldItem().getItem();
+                    double currentBalance = 0;
+                    if (nbt.hasKey(player.username)) {
+                        NBTTagCompound playernbt = nbt.getCompoundTag(player.username);
+                        if (playernbt.hasKey("Balance")) {
+                            currentBalance = playernbt.getDouble("Balance");
+                        }
+                        double modifiedBalance = currentBalance + note.getMoneyValue();
+                        playernbt.setDouble("Balance", modifiedBalance);
+                        nbt.setCompoundTag(player.username, playernbt);
+                    } else {
+                        NBTTagCompound playernbt = new NBTTagCompound();
+                        if (playernbt.hasKey("Balance")) {
+                            currentBalance = playernbt.getDouble("Balance");
+                        }
+                        double modifiedBalance = currentBalance + note.getMoneyValue();
+                        playernbt.setDouble("Balance", modifiedBalance);
+                        nbt.setCompoundTag(player.username, playernbt);
+                    }
+                    NBTTagCompound playernbt = nbt.getCompoundTag(player.username);
+                    player.addChatMessage(note.getMoneyValue() + CityConfig.currencyLarge + " Deposited! Your balance is now " + playernbt.getDouble("Balance") + " " + CityConfig.currencyLargePlural);
+                    NBTConfig.saveConfig(nbt, NBTConfig.getWorldConfig(world));
+                    --item.stackSize;
                 }
-                NBTTagCompound playernbt = nbt.getCompoundTag(player.username);
-            player.addChatMessage(ItemNote10.moneyValue + " Deposited! Your balance is now " + playernbt.getDouble("Balance"));
-            double playerBalance = playernbt.getDouble("Balance");
-            NBTConfig.saveConfig(nbt, NBTConfig.getWorldConfig(world));
             }
         }
-    }
-		return true;
+        return true;
     }
 	
 	@Override
@@ -117,7 +150,7 @@ public class TileEntityATMBlock extends BlockContainer {
 
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-		icons = new Icon[4];
+		icons = new Icon[16];
 
 		for(int i = 0; i < icons.length; i++) {
 			icons[i] = iconRegister.registerIcon("FlenixCities:" + (this.getUnlocalizedName().substring(5)) + i);
@@ -128,6 +161,12 @@ public class TileEntityATMBlock extends BlockContainer {
 	public Icon getIcon(int par1, int par2) {
 		return icons[par2];
 	}
+
+	@Override
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return FlenixCities.atmItem.itemID;
+    }
 
 	@Override
 	@SideOnly(Side.CLIENT)

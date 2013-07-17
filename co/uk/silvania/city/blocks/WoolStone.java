@@ -21,20 +21,11 @@ public class WoolStone extends Block {
 	}
 	
 	@SideOnly(Side.CLIENT)
-	private Icon[] icons;
-
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		icons = new Icon[16];
-
-		for(int i = 0; i < icons.length; i++) {
-			icons[i] = iconRegister.registerIcon("FlenixCities:" + (this.getUnlocalizedName().substring(5)) + i);
-		}
-	}
-
-	@SideOnly(Side.CLIENT)
-	public Icon getIcon(int par1, int par2) {
-		return icons[par2];
+	public Icon getIcon(int side, int meta) {
+		if (side == 0) {
+			return Block.stone.getIcon(side, meta);
+		} 
+		return Block.cloth.getIcon(side, meta);
 	}
 
 	@SideOnly(Side.CLIENT)
