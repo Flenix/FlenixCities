@@ -21,11 +21,11 @@ public class WoolStone extends Block {
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public Icon getIcon(int side, int meta) {
-		if (side == 0) {
-			return Block.stone.getIcon(side, meta);
+	public Icon getIcon(int side, int metadata) {
+		if (side == 1) {
+			return Block.cloth.getIcon(side, metadata);
 		} 
-		return Block.cloth.getIcon(side, meta);
+		return Block.stone.getIcon(side, metadata);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -49,7 +49,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-@Mod(modid="flenixcities", name="FlenixCities", version="0.1.0")
+@Mod(modid="flenixcities", name="FlenixCities", version="0.1.1")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class FlenixCities { 
 	
@@ -62,13 +62,13 @@ public class FlenixCities {
     
 	public static CreativeTabs tabCity = new CreativeTabs("tabCity") {
 		public ItemStack getIconItemStack() {
-			return new ItemStack(Block.cake, 1, 0);
+			return new ItemStack(FlenixCities.skyscraperBlocks, 1, 0);
 		}
 	};
 	
 	public static CreativeTabs tabItems = new CreativeTabs("tabItems") {
 		public ItemStack getIconItemStack() {
-			return new ItemStack(Block.cake, 1, 0);
+			return new ItemStack(FlenixCities.soccerBall, 1, 0);
 		}
 	};
 	

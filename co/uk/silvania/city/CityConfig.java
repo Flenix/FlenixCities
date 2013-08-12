@@ -197,7 +197,7 @@ public class CityConfig {
 		crystalOreID = config.getBlock("Crystal Ore", 1409).getInt();
 		plasticBlockID = config.getBlock("Plastic Block", 1424).getInt();
 		computerTowerID = config.getBlock("Computer Tower", 1425).getInt();
-		floorBlocksID = config.getBlock("Floor Blocks", 1437).getInt();
+		floorBlocksID = config.getBlock("Floor Blocks", 1440).getInt();
 		
 		coin1ID = config.getItem("Coin (1)", 18000).getInt();
 		coin2ID = config.getItem("Coin (2)", 18001).getInt();

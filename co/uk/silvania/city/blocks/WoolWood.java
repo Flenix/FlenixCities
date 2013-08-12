@@ -24,12 +24,13 @@ public class WoolWood extends Block {
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public Icon getIcon(int side, int meta) {
-		if (side == 0) {
-			return Block.planks.getIcon(side, 0);
+	public Icon getIcon(int side, int metadata) {
+		if (side == 1) {
+			return Block.cloth.getIcon(side, metadata);
 		} 
-		return Block.cloth.getIcon(side, meta);
+		return Block.planks.getIcon(side, 0);
 	}
+	
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int par1, CreativeTabs creativeTabs, List list) {
 		for (int var4 = 0; var4 < 16; ++var4) {

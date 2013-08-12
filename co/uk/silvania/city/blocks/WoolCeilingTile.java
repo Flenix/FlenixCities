@@ -32,10 +32,10 @@ public class WoolCeilingTile extends Block {
 
 	@SideOnly(Side.CLIENT)
 	public Icon getIcon(int side, int metadata) {
-		if (side == 0) {
-			return base;
+		if (side == 1) {
+			return Block.cloth.getIcon(side, metadata);
 		} 
-		return Block.cloth.getIcon(side, metadata);
+		return base;
 	}
 
 	@SideOnly(Side.CLIENT)

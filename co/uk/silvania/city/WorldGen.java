@@ -31,49 +31,49 @@ public class WorldGen implements IWorldGenerator {
 	}
     
 	private void generateSurface(World world, Random random, int chunkX, int chunkZ) {
-		for(int i = 0; i < 20; i++) {
+		for(int i = 0; i < 17; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(80);
 			int zCoord = chunkZ + random.nextInt(16);
 			(new WorldGenMinable(FlenixCities.copperOre.blockID, 7)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 		
-		for(int i = 0; i < 15; i++) {
+		for(int i = 0; i < 14; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(50);
 			int zCoord = chunkZ + random.nextInt(16);
 			(new WorldGenMinable(FlenixCities.tinOre.blockID, 5)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 		
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < 4; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(40);
 			int zCoord = chunkZ + random.nextInt(16);
 			(new WorldGenMinable(FlenixCities.titaniumOre.blockID, 8)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 		
-		for(int i = 0; i < 4; i++) {
+		for(int i = 0; i < 3; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(28);
 			int zCoord = chunkZ + random.nextInt(16);
 			(new WorldGenMinable(FlenixCities.rubyOre.blockID, 5)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 		
-		for(int i = 0; i < 7; i++) {
+		for(int i = 0; i < 6; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(20);
 			int zCoord = chunkZ + random.nextInt(16);
 			(new WorldGenMinable(FlenixCities.tecmoniumOre.blockID, 6)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 		
-		for(int i = 0; i < 8; i++) {
+		for(int i = 0; i < 7; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(32);
 			int zCoord = chunkZ + random.nextInt(16);
 			(new WorldGenMinable(FlenixCities.silverOre.blockID, 6)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 		
-		for(int i = 0; i < 6; i++) {
+		for(int i = 0; i < 4; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(36);
 			int zCoord = chunkZ + random.nextInt(16);
