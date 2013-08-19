@@ -49,7 +49,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-@Mod(modid="flenixcities", name="FlenixCities", version="0.1.1")
+@Mod(modid="flenixcities", name="FlenixCities", version="0.1.3")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class FlenixCities { 
 	
@@ -209,6 +209,10 @@ public class FlenixCities {
 	public static Item tennisBall;
 	public static Item soccerBall;
 	public static Item tennisRacquet;
+	public static Item myPhoneBlack;
+	public static Item myPhoneWhite;
+	public static Item myPhoneSuperBlack;
+	public static Item myPhoneSuperWhite;
 	
 	public static WorldGen worldGen = new WorldGen();
 
@@ -369,6 +373,10 @@ public class FlenixCities {
 		tennisBall = new CraftingIngredientItems(config.tennisBallID, 64).setUnlocalizedName("tennisBall");
 		soccerBall = new CraftingIngredientItems(config.soccerBallID, 64).setUnlocalizedName("soccerBall");
 		tennisRacquet = new CraftingIngredientItems(config.tennisRacquetID, 64).setUnlocalizedName("tennisRacquet");
+		myPhoneBlack = new CraftingIngredientItems(config.myPhoneBlackID, 1).setUnlocalizedName("myPhoneBlack");
+		myPhoneWhite = new CraftingIngredientItems(config.myPhoneWhiteID, 1).setUnlocalizedName("myPhoneWhite");
+		myPhoneSuperBlack = new CraftingIngredientItems(config.myPhoneSuperBlackID, 1).setUnlocalizedName("myPhoneSuperBlack");
+		myPhoneSuperWhite = new CraftingIngredientItems(config.myPhoneSuperWhiteID, 1).setUnlocalizedName("myPhoneSuperWhite");
     }
                
     @EventHandler

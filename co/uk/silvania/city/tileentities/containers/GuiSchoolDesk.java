@@ -15,7 +15,7 @@ import co.uk.silvania.city.tileentities.TileEntitySchoolDesk;
 
 public class GuiSchoolDesk extends GuiContainer {
 	
-    private static final ResourceLocation texture = new ResourceLocation("flenixcities", "/textures/gui/schooldeskgui.png");
+    private static final ResourceLocation texture = new ResourceLocation("flenixcities", "textures/gui/schooldeskgui.png");
 
         public GuiSchoolDesk (InventoryPlayer inventoryPlayer, TileEntitySchoolDesk tileEntity, World world, int x, int y, int z) {
                                 super(new ContainerSchoolDesk(inventoryPlayer, tileEntity));

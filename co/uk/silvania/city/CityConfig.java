@@ -140,6 +140,10 @@ public class CityConfig {
 	public static int tennisBallID;
 	public static int soccerBallID;
 	public static int tennisRacquetID;
+	public static int myPhoneBlackID;
+	public static int myPhoneWhiteID;
+	public static int myPhoneSuperBlackID;
+	public static int myPhoneSuperWhiteID;
 	
 	public static String currencyLarge;
 	public static String currencySmall;
@@ -282,6 +286,10 @@ public class CityConfig {
 		tennisBallID = config.getItem("Tennis Ball", 18086).getInt();
 		soccerBallID = config.getItem("Soccer Ball", 18087).getInt();
 		tennisRacquetID = config.getItem("Tennis Racquet", 18088).getInt();
+		myPhoneBlackID = config.getItem("myPhone Black", 18089).getInt();
+		myPhoneWhiteID = config.getItem("myPhone White", 18090).getInt();
+		myPhoneSuperBlackID = config.getItem("myPhone Super Black", 18091).getInt();
+		myPhoneSuperWhiteID = config.getItem("myPhone Super White", 18092).getInt();
 		
 		currencySmall = config.get("Currency Small", Configuration.CATEGORY_GENERAL, "Cent").getString();
 		currencyLarge = config.get("Currency Large", Configuration.CATEGORY_GENERAL, "Dollar").getString();

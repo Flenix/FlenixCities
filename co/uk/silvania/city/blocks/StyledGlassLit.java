@@ -26,7 +26,7 @@ public class StyledGlassLit extends BlockGlass {
 
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-		icons = new Icon[12];
+		icons = new Icon[16];
 
 		for(int i = 0; i < icons.length; i++) {
 			icons[i] = iconRegister.registerIcon("FlenixCities:" + (this.getUnlocalizedName().substring(5)) + i);

@@ -15,7 +15,7 @@ import co.uk.silvania.city.tileentities.TileEntityFilingCabinet;
 
 public class GuiFilingCabinet extends GuiContainer {
 	
-    private static final ResourceLocation texture = new ResourceLocation("flenixcities", "/textures/gui/filingcabinetgui.png");
+    private static final ResourceLocation texture = new ResourceLocation("flenixcities", "textures/gui/filingcabinetgui.png");
 
         public GuiFilingCabinet (InventoryPlayer inventoryPlayer, TileEntityFilingCabinet tileEntity, World world, int x, int y, int z) {
                                 super(new ContainerFilingCabinet(inventoryPlayer, tileEntity));

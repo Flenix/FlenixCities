@@ -14,7 +14,7 @@ import co.uk.silvania.city.tileentities.TileEntityVendingMachine;
 
 public class GuiVendingMachine extends GuiContainer {
 	
-    private static final ResourceLocation texture = new ResourceLocation("flenixcities", "/textures/gui/vendingmachine.png");
+    private static final ResourceLocation texture = new ResourceLocation("flenixcities", "textures/gui/vendingmachine.png");
 
         public GuiVendingMachine (InventoryPlayer inventoryPlayer, TileEntityVendingMachine tileEntity, World world, int x, int y, int z) {
         	super(new ContainerVendingMachine(inventoryPlayer, tileEntity));

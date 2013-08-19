@@ -15,7 +15,7 @@ import co.uk.silvania.city.tileentities.TileEntityFridgeLarge;
 
 public class GuiFridgeLarge extends GuiContainer {
 	
-    private static final ResourceLocation texture = new ResourceLocation("flenixcities", "/textures/gui/fridgelargegui.png");
+    private static final ResourceLocation texture = new ResourceLocation("flenixcities", "textures/gui/fridgelargegui.png");
 
         public GuiFridgeLarge (InventoryPlayer inventoryPlayer, TileEntityFridgeLarge tileEntity, World world, int x, int y, int z) {
                                 super(new ContainerFridgeLarge(inventoryPlayer, tileEntity));

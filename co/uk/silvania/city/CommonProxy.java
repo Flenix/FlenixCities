@@ -146,6 +146,10 @@ public class CommonProxy {
     	GameRegistry.registerItem(FlenixCities.tennisBall, "tennisBall");
     	GameRegistry.registerItem(FlenixCities.soccerBall, "soccerBall");
     	GameRegistry.registerItem(FlenixCities.tennisRacquet, "tennisRacquet");
+    	GameRegistry.registerItem(FlenixCities.myPhoneBlack, "myPhoneBlack");
+    	GameRegistry.registerItem(FlenixCities.myPhoneWhite, "myPhoneWhite");
+    	GameRegistry.registerItem(FlenixCities.myPhoneSuperBlack, "myPhoneSuperBlack");
+    	GameRegistry.registerItem(FlenixCities.myPhoneSuperWhite, "myPhoneSuperWhite");
         
     }
     
@@ -249,6 +253,10 @@ public class CommonProxy {
     	LanguageRegistry.addName(FlenixCities.tennisBall, "Tennis Ball");
     	LanguageRegistry.addName(FlenixCities.soccerBall, "Soccer Ball");
     	LanguageRegistry.addName(FlenixCities.tennisRacquet, "Tennis Racquet");
+    	LanguageRegistry.addName(FlenixCities.myPhoneBlack, "myPhone");
+    	LanguageRegistry.addName(FlenixCities.myPhoneWhite, "myPhone");
+    	LanguageRegistry.addName(FlenixCities.myPhoneSuperBlack, "myPhone Super");
+    	LanguageRegistry.addName(FlenixCities.myPhoneSuperWhite, "myPhone Super");
         
         LanguageRegistry.addName(new ItemStack(FlenixCities.vendingMachine, 1, 0), "Vending Machine");
         LanguageRegistry.addName(new ItemStack(FlenixCities.vendingMachine, 1, 4), "Vending Machine");

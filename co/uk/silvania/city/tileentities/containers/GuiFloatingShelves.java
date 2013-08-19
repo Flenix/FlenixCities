@@ -15,7 +15,7 @@ import co.uk.silvania.city.tileentities.TileEntityFloatingShelves;
 
 public class GuiFloatingShelves extends GuiContainer {
 	
-    private static final ResourceLocation texture = new ResourceLocation("flenixcities", "/textures/gui/floatingshelvesbuy.png");
+    private static final ResourceLocation texture = new ResourceLocation("flenixcities", "textures/gui/floatingshelvesbuy.png");
 
         public GuiFloatingShelves (InventoryPlayer inventoryPlayer, TileEntityFloatingShelves tileEntity, World world, int x, int y, int z) {
                                 super(new ContainerFloatingShelves(inventoryPlayer, tileEntity));
