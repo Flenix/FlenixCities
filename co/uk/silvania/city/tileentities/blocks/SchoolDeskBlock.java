@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import co.uk.silvania.city.FlenixCities;
+import co.uk.silvania.cities.core.FlenixCities_Core;
 import co.uk.silvania.city.tileentities.TileEntitySchoolDesk;
 
 
@@ -18,7 +18,7 @@ public class SchoolDeskBlock extends BlockContainer {
 	public SchoolDeskBlock(int id) {
 		super(id, Material.iron);
 		this.setHardness(1.0F);
-		this.setCreativeTab(FlenixCities.tabCity);
+		this.setCreativeTab(FlenixCities_Core.tabCity);
 		this.setLightOpacity(0);
 	}
 
@@ -36,7 +36,7 @@ public class SchoolDeskBlock extends BlockContainer {
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int i, float j, float k, float l) {
         TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
-            player.openGui(FlenixCities.instance, 4, world, x, y, z);
+            player.openGui(FlenixCities_Core.instance, 4, world, x, y, z);
         return true;
     }
 	

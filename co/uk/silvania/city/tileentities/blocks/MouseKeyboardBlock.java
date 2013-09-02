@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import co.uk.silvania.city.FlenixCities;
+import co.uk.silvania.cities.core.FlenixCities_Core;
 import co.uk.silvania.city.tileentities.TileEntityMouseKeyboard;
 
 
@@ -18,7 +18,7 @@ public class MouseKeyboardBlock extends BlockContainer {
 	public MouseKeyboardBlock(int id) {
 		super(id, Material.iron);
 		this.setHardness(1.0F);
-		this.setCreativeTab(FlenixCities.tabCity);
+		this.setCreativeTab(FlenixCities_Core.tabCity);
 		this.setLightOpacity(0);
 	}
 

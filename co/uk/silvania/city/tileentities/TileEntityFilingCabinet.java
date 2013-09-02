@@ -3,8 +3,6 @@ package co.uk.silvania.city.tileentities;
 import java.util.Iterator;
 import java.util.List;
 
-import co.uk.silvania.city.FlenixCities;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ContainerChest;
 import net.minecraft.inventory.IInventory;
@@ -170,18 +168,6 @@ public class TileEntityFilingCabinet extends TileEntityChest implements IInvento
         {
             return super.receiveClientEvent(par1, par2);
         }
-    }
-    
-    public void openChest()
-    {
-        ++this.numUsingPlayers;
-        this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, FlenixCities.filingCabinet.blockID, 1, this.numUsingPlayers);
-    }
-
-    public void closeChest()
-    {
-        --this.numUsingPlayers;
-        this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, FlenixCities.filingCabinet.blockID, 1, this.numUsingPlayers);
     }
 
     /**

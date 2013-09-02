@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import co.uk.silvania.city.FlenixCities;
+import co.uk.silvania.cities.core.FlenixCities_Core;
 
 
 public class ComputerTowerBlock extends Block{
@@ -18,7 +18,7 @@ public class ComputerTowerBlock extends Block{
 	public ComputerTowerBlock(int id) {
 		super(id, Material.iron);
 		this.setHardness(1.0F);
-		this.setCreativeTab(FlenixCities.tabCity);
+		this.setCreativeTab(FlenixCities_Core.tabCity);
 		this.setLightOpacity(0);
 	}
 	

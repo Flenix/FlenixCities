@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
-import co.uk.silvania.city.tileentities.TileEntityATMEntity;
+import co.uk.silvania.cities.econ.blocks.TileEntityATMEntity;
 import co.uk.silvania.city.tileentities.TileEntitySchoolDesk;
 
 public class GuiSchoolDesk extends GuiContainer {

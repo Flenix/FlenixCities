@@ -1,6 +1,6 @@
 package co.uk.silvania.city.tileentities.blocks;
 
-import co.uk.silvania.city.FlenixCities;
+import co.uk.silvania.cities.core.FlenixCities_Core;
 import co.uk.silvania.city.tileentities.TileEntityTravellatorEntity;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -18,7 +18,7 @@ public class TileEntityTravellatorBlock extends BlockContainer {
 
 	public TileEntityTravellatorBlock(int id) {
 		super(id, Material.ice);
-		this.setCreativeTab(FlenixCities.tabCity);
+		this.setCreativeTab(FlenixCities_Core.tabCity);
         this.setBlockBounds(0.0F, -0.5F, 0.0F, 1.0F, 0.1F, 1.0F);
 		this.setHardness(1.0F);
 	}
